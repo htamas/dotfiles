@@ -15,6 +15,7 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 fish -c "source /tmp/fisher.fish && fisher install jorgebucaran/fisher"
 fish -c "fisher update"
 rm /tmp/fisher.fish
+tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='Two lines' --prompt_connection=Disconnected --prompt_spacing=Sparse --icons='Few icons' --transient=No
 echo "✅ fisher installed and updated"
 
 echo "Setting up key repeat preferences..."
