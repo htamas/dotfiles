@@ -1,0 +1,24 @@
+[user]
+        name = Tamas Hegedus
+        email = htamas90@gmail.com
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
+[alias]
+        co = checkout
+        br = branch
+        ci = commit
+        st = status
+        ac = !git add -A && git commit
+        ec = config --global -e
+        wip = commit -am "WIP"
+        undo = reset HEAD~1 --mixed
+        amend = commit -a --amend
+        update = pull --autostash origin master:master
+[pull]
+        rebase = true
+[push]
+        autoSetupRemote = true
+[core]
+        excludesfile = /Users/htamas/.gitignore_global
+[init]
+	defaultBranch = master
