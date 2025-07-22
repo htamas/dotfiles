@@ -54,3 +54,6 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias grep='grep --color=auto'
 
+fzf --fish | source
+zoxide init fish | source
+
