@@ -54,6 +54,10 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias grep='grep --color=auto'
 
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
+set -gx FZF_CTRL_T_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
+set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
+
 fzf --fish | source
 zoxide init fish | source
 
