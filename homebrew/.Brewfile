@@ -1,3 +1,4 @@
+brew "bat"
 brew "colima"
 brew "docker"
 brew "openssl@3"

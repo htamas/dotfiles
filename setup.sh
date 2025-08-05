@@ -1,10 +1,9 @@
 #!/usr/bin/env zsh
 set -e
 
-echo "🍺 Installing homebrew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" </dev/null ## /dev/null skips pressing enter for the installation
+echo "🍺 Installing homebrew packages"
 brew bundle --file=~/.dotfiles/homebrew/.Brewfile
-echo "✅ Homebrew installed"
+echo "✅ Packages installed"
 echo "🪏 Linking up config files..."
 stow fish git homebrew mise zed
 echo "✅ Config files are in place"
@@ -15,7 +14,8 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 fish -c "source /tmp/fisher.fish && fisher install jorgebucaran/fisher"
 fish -c "fisher update"
 rm /tmp/fisher.fish
-tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='Two lines' --prompt_connection=Disconnected --prompt_spacing=Sparse --icons='Few icons' --transient=No
+fish -c "fisher install IlanCosman/tide@v6"
+fish -c "tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='Two lines' --prompt_connection=Disconnected --prompt_spacing=Sparse --icons='Few icons' --transient=No"
 echo "✅ fish configured"
 
 echo "Setting up key repeat preferences..."
@@ -73,4 +73,3 @@ else
 fi
 
 echo "🎉 Fish shell setup complete!"
-
