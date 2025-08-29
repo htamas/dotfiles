@@ -78,6 +78,15 @@
       "cmd-alt-o": "project_symbols::Toggle",
       "cmd-1": "workspace::ToggleLeftDock",
       "cmd-6": "diagnostics::Deploy"
+      // "space h": "workspace::ActivatePaneLeft",
+      // "space j": "workspace::ActivatePaneDown",
+      // "space k": "workspace::ActivatePaneUp",
+      // "space l": "workspace::ActivatePaneRight",
+
+      // "space H": "workspace::SwapPaneLeft",
+      // "space J": "workspace::SwapPaneDown",
+      // "space L": "workspace::SwapPaneRight",
+      // "space K": "workspace::SwapPaneUp"
     }
   },
   {

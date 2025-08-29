@@ -58,6 +58,13 @@ set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git --excl
 set -gx FZF_CTRL_T_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
 set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
 
+# Set env variables for Go
+set -x GOPATH $HOME/go
+set -x GOBIN $GOPATH/bin
+set -U fish_user_paths $PATH:$HOME/go/bin $fish_user_paths
+
 fzf --fish | source
 zoxide init fish | source
 
+fish_add_path $HOME/.local/bin
+function lzd; lazydocker; end

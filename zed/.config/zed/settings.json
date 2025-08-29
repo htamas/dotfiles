@@ -7,26 +7,52 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "tab_bar": {
+    "show": true
+  },
+  "telemetry": {
+    "metrics": true
+  },
   "show_edit_predictions": false,
+  "relative_line_numbers": true,
   "languages": {
     "Go": {
       "show_edit_predictions": false
     },
     "YAML": {
       "format_on_save": "off"
+    },
+    "JSON": {
+      "format_on_save": "off"
+    },
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier"
+          // "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
     }
   },
   "agent": {
+    "default_profile": "ask",
     "default_model": {
-      "provider": "copilot_chat",
+      "provider": "google",
       "model": "gemini-2.5-pro"
-    },
-    "version": "2"
+    }
   },
-  "theme": "Catppuccin Macchiato",
+  "theme": "Catppuccin Mocha",
   "vim_mode": true,
   "ui_font_size": 14,
-  "buffer_font_family": "Input Mono",
+  "buffer_font_family": "AtkynsonMono Nerd Font Mono",
   "buffer_font_size": 13,
   "show_whitespaces": "selection",
   "cursor_blink": false,
