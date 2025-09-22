@@ -41,6 +41,8 @@ alias ll='eza -l --color=always --group-directories-first --icons'  # long forma
 alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="eza -a | grep -e '^\.'"                                     # show only dotfiles
 
+alias k='kubectl'
+
 # Common use
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
