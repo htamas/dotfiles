@@ -19,6 +19,11 @@
     "Go": {
       "show_edit_predictions": false
     },
+    "GraphQL": {
+      "inlay_hints": {
+        "enabled": true
+      }
+    },
     "YAML": {
       "format_on_save": "off"
     },
@@ -71,6 +76,13 @@
           "functionTypeParameters": true,
           "parameterNames": true,
           "rangeVariableTypes": true
+        }
+      }
+    },
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": "./.venv/bin/python"
         }
       }
     }
