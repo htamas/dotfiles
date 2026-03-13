@@ -1,0 +1,16 @@
+secrets.fish
+
+# Fish auto-generated files
+fish/.config/fish/fish_variables*
+fish/.config/fish/fishd.tmp.*
+fish/.config/fish/completions/
+fish/.config/fish/conf.d/
+fish/.config/fish/functions/
+
+# Zed non-config files
+zed/.config/zed/prompts/
+zed/.config/zed/themes/
+zed/.config/zed/*_backup.json
+
+# Backup files
+*.bak
