@@ -29,7 +29,8 @@ fi
 # macOS preferences
 defaults write -g InitialKeyRepeat -int 12
 defaults write -g KeyRepeat -int 2
-echo "Key repeat preferences set."
+defaults write -g com.apple.keyboard.fnState -bool true
+echo "macOS preferences set."
 
 echo "Done! Restart your terminal to start using fish."
 echo "Run 'tide configure' to set up your prompt theme."
