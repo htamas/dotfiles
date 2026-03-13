@@ -1,11 +1,19 @@
 # Dotfiles
 
-## Install
+## Prerequisites
 
 ```
 xcode-select --install
-git clone https://github.com/htamas/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles; source setup.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Install [Nerd fonts](https://www.nerdfonts.com/font-downloads)
+## Install
+
+```
+git clone git@github.com:htamas/dotfiles.git ~/.dotfiles
+~/.dotfiles/setup.sh
+```
+
+After setup, restart your terminal and run `tide configure` to set up the fish prompt.
+
+Install [AtkynsonMono Nerd Font](https://www.nerdfonts.com/font-downloads) (used by Zed).
