@@ -1,56 +1,52 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    set -U fish_greeting ""
+    set -U __done_min_cmd_duration 10000
+    set -U __done_notification_urgency_level low
 end
 
-set -U fish_greeting ""
+# Path
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/go/bin
 
-# Format man pages
+# Environment
+set -x GOPATH $HOME/go
+set -x GOBIN $GOPATH/bin
 set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
-# Set settings for https://github.com/franciscolourenco/done
-set -U __done_min_cmd_duration 10000
-set -U __done_notification_urgency_level low
+# fzf
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
+set -gx FZF_CTRL_T_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
+set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
 
-## Useful aliases
-# Replace ls with eza
-alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
-alias la='eza -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='eza -l --color=always --group-directories-first --icons'  # long format
-alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
-alias l.="eza -a | grep -e '^\.'"                                     # show only dotfiles
+# Aliases - ls (eza)
+alias ls='eza -al --color=always --group-directories-first --icons'
+alias la='eza -a --color=always --group-directories-first --icons'
+alias ll='eza -l --color=always --group-directories-first --icons'
+alias lt='eza -aT --color=always --group-directories-first --icons'
+alias l.="eza -a | grep -e '^\.'"
 
-alias k='kubectl'
-
-# Common use
-alias tarnow='tar -acf '
-alias untar='tar -zxvf '
-alias wget='wget -c '
-alias psmem='ps auxf | sort -nr -k 4'
-alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+# Aliases - navigation
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+
+# Aliases - misc
+alias k='kubectl'
+alias tarnow='tar -acf '
+alias untar='tar -zxvf '
+alias wget='wget -c '
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias grep='grep --color=auto'
 
-set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
-set -gx FZF_CTRL_T_COMMAND 'fd --type f --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
-set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
-
-# Set env variables for Go
-set -x GOPATH $HOME/go
-set -x GOBIN $GOPATH/bin
-set -U fish_user_paths $PATH:$HOME/go/bin $fish_user_paths
+# Tool init
+fzf --fish | source
+zoxide init fish | source
 
 # Load secrets if they exist
 if test -f ~/.config/fish/secrets.fish
     source ~/.config/fish/secrets.fish
 end
-
-
-fzf --fish | source
-zoxide init fish | source
-
-fish_add_path $HOME/.local/bin
