@@ -5,7 +5,11 @@ fish/.config/fish/fish_variables*
 fish/.config/fish/fishd.tmp.*
 fish/.config/fish/completions/
 fish/.config/fish/conf.d/
-fish/.config/fish/functions/
+fish/.config/fish/functions/*
+!fish/.config/fish/functions/history.fish
+!fish/.config/fish/functions/backup.fish
+!fish/.config/fish/functions/__filter_long_commands.fish
+!fish/.config/fish/functions/copy.fish
 
 # Zed non-config files
 zed/.config/zed/prompts/

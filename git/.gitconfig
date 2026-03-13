@@ -14,6 +14,7 @@
         undo = reset HEAD~1 --mixed
         amend = commit -a --amend
         update = pull --autostash origin master:master
+	nb = "!f() { git stash && git checkout master && git pull && git checkout -b "$1" && git stash pop; }; f"
 [pull]
         rebase = true
 [push]
@@ -22,5 +23,3 @@
         excludesfile = /Users/htamas/.gitignore_global
 [init]
 	defaultBranch = master
-[url "git@github.com:"]
-	insteadOf = https://github.com/
