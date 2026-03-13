@@ -12,27 +12,6 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
-# Fish command history
-function history
-    builtin history --show-time='%F %T '
-end
-
-function backup --argument filename
-    cp $filename $filename.bak
-end
-
-# Copy DIR1 DIR2
-function copy
-    set count (count $argv | tr -d \n)
-    if test "$count" = 2; and test -d "$argv[1]"
-        set from (echo $argv[1] | trim-right /)
-        set to (echo $argv[2])
-        command cp -r $from $to
-    else
-        command cp $argv
-    end
-end
-
 ## Useful aliases
 # Replace ls with eza
 alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
@@ -65,8 +44,13 @@ set -x GOPATH $HOME/go
 set -x GOBIN $GOPATH/bin
 set -U fish_user_paths $PATH:$HOME/go/bin $fish_user_paths
 
+# Load secrets if they exist
+if test -f ~/.config/fish/secrets.fish
+    source ~/.config/fish/secrets.fish
+end
+
+
 fzf --fish | source
 zoxide init fish | source
 
 fish_add_path $HOME/.local/bin
-function lzd; lazydocker; end
