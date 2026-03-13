@@ -1,3 +1,4 @@
+brew "bat"
 brew "eza"
 brew "fd"
 brew "fish"

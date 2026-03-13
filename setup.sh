@@ -30,6 +30,14 @@ fi
 defaults write -g InitialKeyRepeat -int 12
 defaults write -g KeyRepeat -int 2
 defaults write -g com.apple.keyboard.fnState -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Keyboard shortcuts: Alt+1..5 to switch to Desktop 1..5
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 118 '{ enabled = 1; value = { parameters = (49, 18, 524288); type = standard; }; }'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 119 '{ enabled = 1; value = { parameters = (50, 19, 524288); type = standard; }; }'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 120 '{ enabled = 1; value = { parameters = (51, 20, 524288); type = standard; }; }'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 121 '{ enabled = 1; value = { parameters = (52, 21, 524288); type = standard; }; }'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 122 '{ enabled = 1; value = { parameters = (53, 23, 524288); type = standard; }; }'
 echo "macOS preferences set."
 
 echo "Done! Restart your terminal to start using fish."
