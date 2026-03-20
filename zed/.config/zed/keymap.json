@@ -94,5 +94,10 @@
     "bindings": {
       "enter": "project_panel::Open"
     }
+  },
+  {
+    "bindings": {
+      "ctrl-tab": "tab_switcher::ToggleAll"
+    }
   }
 ]

@@ -15,6 +15,7 @@
         amend = commit -a --amend
         update = pull --autostash origin master:master
 	nb = "!f() { git stash && git checkout master && git pull && git checkout -b "$1" && git stash pop; }; f"
+	onto = "!f() { git rebase --onto origin/master \"$1\"; }; f"
 [pull]
         rebase = true
 [push]
