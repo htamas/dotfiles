@@ -20,10 +20,10 @@ set -gx FZF_CTRL_T_COMMAND 'fd --type f --hidden --follow --exclude .git --exclu
 set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --follow --exclude .git --exclude Library --exclude Applications --exclude .Trash --exclude .cache --exclude node_modules'
 
 # Aliases - ls (eza)
-alias ls='eza -al --color=always --group-directories-first --icons'
-alias la='eza -a --color=always --group-directories-first --icons'
-alias ll='eza -l --color=always --group-directories-first --icons'
-alias lt='eza -aT --color=always --group-directories-first --icons'
+alias ls='eza -al --color=always --group-directories-first --icons=always'
+alias la='eza -a --color=always --group-directories-first --icons=always'
+alias ll='eza -l --color=always --group-directories-first --icons=always'
+alias lt='eza -aT --color=always --group-directories-first --icons=always'
 alias l.="eza -a | grep -e '^\.'"
 
 # Aliases - navigation

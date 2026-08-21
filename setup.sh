@@ -6,7 +6,7 @@ brew bundle --file=~/.dotfiles/homebrew/.Brewfile
 
 # Symlink config files
 echo "Linking config files..."
-stow --restow fish git homebrew mise zed
+stow --restow fish git homebrew mise opencode zed
 
 # Install fisher (fish plugin manager)
 if ! fish -c "type -q fisher" 2>/dev/null; then

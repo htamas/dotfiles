@@ -7,6 +7,19 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "buffer_font_weight": 400.0,
   "ui_font_family": ".ZedSans",
   "inlay_hints": {
@@ -54,13 +67,14 @@
     }
   },
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "anthropic",
       "model": "claude-opus-4-1-latest"
     },
     "model_parameters": []
   },
-  "theme": "Tokyo Night",
+  "theme": "One Light",
   "vim_mode": true,
   "ui_font_size": 15.0,
   "buffer_font_family": "AtkynsonMono Nerd Font",
