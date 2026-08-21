@@ -8,3 +8,4 @@ shell: fish
 
 ## Coding style
  - code comments only on public methods and their input/output types; todos and known bugs.
+ - never reference transient working docs in code comments
